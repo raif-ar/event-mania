@@ -208,7 +208,7 @@ export default {
             this.isNoDataSearch = true;
           }
         })
-        .catch((error) => console.log(error))
+        .catch(() => alert("Could not load results"))
         .finally(() => {
           NProgress.done();
           this.isLoading = false;
@@ -236,7 +236,7 @@ export default {
               this.isNoDataFilter = true;
             }
           })
-          .catch((error) => console.log(error))
+          .catch(() => alert("Could not load results"))
           .finally(() => {
             NProgress.done();
             this.isLoading = false;
@@ -262,6 +262,7 @@ export default {
   margin-bottom: 10px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .form-input {
@@ -361,5 +362,53 @@ hr {
   height: 100vh;
   width: 100vw;
   background: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 576px) {
+  .form-input-container {
+    flex-direction: row;
+  }
+
+  .form-input.country-select > div {
+    flex: 3;
+  }
+
+  .form-input > label {
+    flex: 1;
+    font-size: 15px;
+    text-align: left;
+  }
+
+  .form-input > input {
+    flex: 3;
+  }
+
+  .form-input.datepicker > div {
+    display: flex;
+    flex: 3;
+  }
+
+  .form-input.datepicker > div > input {
+    flex: 1;
+  }
+
+  .button-container {
+    margin-top: 10px;
+    justify-content: center;
+  }
+
+  .filter-container {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 20px;
+  }
+
+  .filter-component {
+    margin-bottom: 10px;
+  }
+
+  .fade-wrapper {
+    display: none;
+  }
 }
 </style>

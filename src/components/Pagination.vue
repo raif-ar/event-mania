@@ -184,4 +184,21 @@ export default {
   transform: scale(1.1);
   background-color: #d8ccf4;
 }
+
+@media (max-width: 576px) {
+  .pagination {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .pagination-item {
+    display: flex;
+    flex: 1;
+    margin-bottom: 10px;
+  }
+}
 </style>

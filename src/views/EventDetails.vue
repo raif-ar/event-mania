@@ -109,6 +109,7 @@ h2 {
 .info-tags {
   text-align: left;
   margin-left: 20px;
+  margin-right: 20px;
 }
 
 .images-container {
@@ -135,6 +136,24 @@ h2 {
   margin-top: 200px;
   margin-bottom: 200px;
   font-size: 40px;
+}
+
+@media (max-width: 576px) {
+  .event-container {
+    flex-direction: column;
+  }
+
+  .event-header {
+    text-align: left;
+  }
+
+  .info-card {
+    margin-bottom: 20px;
+  }
+
+  .images-container {
+    margin-left: 0;
+  }
 }
 </style>
 >
