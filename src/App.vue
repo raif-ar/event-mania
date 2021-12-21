@@ -21,4 +21,13 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+
+body {
+  margin: 0;
+}
+
+/* Adjusts the country select dropdown height */
+.vs--searchable .vs__dropdown-toggle {
+  max-height: 34px;
+}
 </style>

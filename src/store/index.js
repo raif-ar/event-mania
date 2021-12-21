@@ -4,6 +4,8 @@ import { countries } from "../assets/countries";
 export default createStore({
   state: {
     countries,
+    events: [],
+    event: {},
   },
   mutations: {},
   actions: {},
