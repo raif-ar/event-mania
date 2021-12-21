@@ -40,7 +40,6 @@ export default {
     });
   },
   getEventDetails(id) {
-    console.log("Individual API is hit");
     return apiClient.get("/events/" + id);
   },
   /**

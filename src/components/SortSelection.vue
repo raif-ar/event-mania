@@ -51,6 +51,7 @@ export default {
     },
     sortOrder: {
       type: String,
+      required: true,
     },
   },
   emits: ["update:modelValue", "sort-by-change", "sort-order-change"],

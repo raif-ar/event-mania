@@ -68,6 +68,7 @@ export default {
       return "Not Specified";
     },
     imagesToDisplay() {
+      // Displays only upto 2 images
       return this.event.images?.length > 2
         ? this.event.images.slice(0, 2)
         : this.event.images;

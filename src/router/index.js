@@ -4,7 +4,6 @@ import Home from "../views/Home.vue";
 import EventDetails from "../views/EventDetails.vue";
 import NetworkError from "../views/NetworkError.vue";
 import NotFound from "../views/NotFound.vue";
-import EventService from "@/services/EventService.js";
 import store from "@/store";
 
 const routes = [
@@ -18,13 +17,10 @@ const routes = [
     name: "EventDetails",
     component: EventDetails,
     beforeEnter: (to) => {
-      return EventService.getEventDetails(to.params.id)
-        .then((response) => {
-          store.state.event = response.data;
-        })
-        .catch(() => {
-          return { name: "NetworkError" };
-        });
+      // Redirects to Network Error page on error because API is returning CORS error always before 404
+      return store
+        .dispatch("fetchEvent", to.params.id)
+        .catch(() => ({ name: "NetworkError" }));
     },
   },
   {
